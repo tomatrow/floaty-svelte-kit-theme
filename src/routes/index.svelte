@@ -36,7 +36,7 @@
                 {
                     label: "Outerwear",
                     href: "#",
-                    src: "https://source.unsplash.com/featured/?winter",
+                    src: "https://source.unsplash.com/featured/?summer",
                     items: [
                         {
                             label: "Jackets",
@@ -70,7 +70,7 @@
                 {
                     label: "Homegoods",
                     href: "#",
-                    src: "https://source.unsplash.com/featured/?summer",
+                    src: "https://source.unsplash.com/featured/?winter",
                     items: [
                         {
                             label: "Grooming",
@@ -133,6 +133,8 @@
             href: "#"
         }
     ]
+    
+    // menu[0].items = [...menu[0].items, ...menu[0].items, ...menu[0].items, ...menu[0].items]
 </script>
 
 <script lang="ts">
