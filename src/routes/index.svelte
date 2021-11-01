@@ -9,7 +9,7 @@
                 {
                     label: "Aparrel",
                     href: "#",
-                    src: "https://source.unsplash.com/random",
+                    src: "https://source.unsplash.com/featured/?spring",
                     items: [
                         {
                             label: "Sweatshirts",
@@ -36,7 +36,7 @@
                 {
                     label: "Outerwear",
                     href: "#",
-                    src: "https://source.unsplash.com/random",
+                    src: "https://source.unsplash.com/featured/?winter",
                     items: [
                         {
                             label: "Jackets",
@@ -55,7 +55,7 @@
                 {
                     label: "Accessories",
                     href: "#",
-                    src: "https://source.unsplash.com/random",
+                    src: "https://source.unsplash.com/featured/?fall",
                     items: [
                         {
                             label: "Socks",
@@ -70,7 +70,7 @@
                 {
                     label: "Homegoods",
                     href: "#",
-                    src: "https://source.unsplash.com/random",
+                    src: "https://source.unsplash.com/featured/?summer",
                     items: [
                         {
                             label: "Grooming",
@@ -139,7 +139,7 @@
     import { Navbar } from "$lib"
 </script>
 
-<Navbar {menu} class="mx-4 py-4" >
+<Navbar {menu} class="py-4" >
     <a slot="before" let:collapsed href="#" class="mr-4 h-16 flex items-center justify-center bg-gray-100 px-4">
         <span class:underline={collapsed} class="font-black tracking-wider">APRL.</span>
     </a>
