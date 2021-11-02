@@ -27,7 +27,9 @@
         <div class="divide-y divide-black divide-opacity-50">
             {#each menu as item, index}
                 <div in:fly={{ y: -50, delay: duration + index * 25}}>
-                    <MobileItem {item} />
+                    <MobileItem {item} let:label let:level level={0}>
+                        <slot name="mobile-item" {level} {label} />
+                    </MobileItem>
                 </div>
             {/each}
         </div>

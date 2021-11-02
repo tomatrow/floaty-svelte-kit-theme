@@ -10,7 +10,7 @@
     export let open = false
 </script>
 
-<header class="navbar flex items-center gap-4 fixed top-0 left-0 right-0 {clazz}" {...$$restProps}>
+<header class="flex items-center gap-4 fixed top-0 left-0 right-0 {clazz}" {...$$restProps}>
     <slot name="bar-left" />
 
     <Desktop {menu}>
@@ -28,10 +28,6 @@
 
 {#if open}
     <Mobile {menu} bind:open>
-        <!-- <svelte:fragment slot="primary" let:label>
-            <slot name="primary" {label} />
-        </svelte:fragment>
-        <slot name="secondary" slot="secondary" let:label {label} let:compact {compact} />
-        <slot name="tertiary" slot="tertiary" let:label {label} let:compact {compact} /> -->        
+        <slot name="mobile-item" slot="mobile-item" let:level {level} let:label {label}>{label}</slot>
     </Mobile>
 {/if}

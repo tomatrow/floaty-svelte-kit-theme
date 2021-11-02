@@ -151,24 +151,23 @@
         HAM
     </button>
 
-    <span slot="primary" let:label>{label}</span>
-    <span slot="secondary" let:label>{label}</span>
-    <span slot="tertiary" let:label>{label}</span>
+    <span class="hover:underline" slot="primary" let:label>{label}</span>
+    <span class="hover:underline" slot="secondary" let:label>{label}</span>
+    <span class="hover:underline" slot="tertiary" let:label>{label}</span>
+    <span class="hover:underline" slot="mobile-item" let:label let:level>{level}{label}</span>
 </Navbar>
  
 <style global lang="postcss">
-    .navbar .hide-mobile {
+    .hide-mobile {
         display: none;
     }
 
     @screen md {
-        .navbar {
-            .hide-desktop {
-                display: none;
-            }
-            .hide-mobile {
-                display: flex;
-            }
+        .hide-desktop {
+            display: none;
+        }
+        .hide-mobile {
+            display: flex;
         }
     }
 </style>
