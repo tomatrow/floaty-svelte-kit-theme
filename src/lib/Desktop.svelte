@@ -21,7 +21,7 @@
     }
 </script>
 
-<nav class="flex flex-wrap {clazz}" on:mouseover|once={load}>
+<nav class="flex flex-wrap {clazz}" on:pointerover|once={load}>
     {#each menu ?? [] as { label, href, items }}
         <Hover let:hovering class="relative overflow-visible flex justify-center items-center">
             <slot name="primary" {label} {href}>

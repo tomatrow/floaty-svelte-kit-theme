@@ -147,7 +147,7 @@
 
     <Desktop class="mx-auto hide-mobile gap-4" {menu}>
         <svelte:fragment slot="primary" let:href let:label>
-            <a class="p-4" {href}>{label}!<a /> </a></svelte:fragment
+            <a class="p-4" {href}>{label}!</a></svelte:fragment
         >
         <svelte:fragment slot="secondary" let:href let:label let:compact>
             <a
@@ -155,12 +155,12 @@
                     ? 'px-4 duration-200 hover:bg-gray-100 whitespace-nowrap'
                     : 'font-black'}"
                 {href}
-                >{label}!<a />
+                >{label}!
             </a></svelte:fragment
         >
         <svelte:fragment slot="tertiary" let:href let:label let:compact>
             <a class={compact ? "hover:bg-gray-100 duration-200 p-4 whitespace-nowrap" : ""} {href}
-                >{label}!<a />
+                >{label}!
             </a></svelte:fragment
         >
     </Desktop>
