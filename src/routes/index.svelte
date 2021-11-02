@@ -141,19 +141,37 @@
     import { Navbar } from "$lib"
 </script>
 
-<Navbar {menu} class="py-4" >
-    <a slot="before" let:collapsed href="#" class="mr-4 h-16 flex items-center justify-center bg-gray-100 px-4">
-        <span class:underline={collapsed} class="font-black tracking-wider">APRL.</span>
+<Navbar {menu}  class="py-4" >
+    <a slot="before" href="#" class="mr-4 h-16 flex items-center justify-center bg-gray-100 px-4">
+        <span class="font-black tracking-wider underline">APRL.</span>
     </a>
-    <div slot="after" let:collapsed class:ml-auto={!collapsed}>
-        {#if collapsed}
-            Mobile Menu Footer
-        {:else}
-            HAM
-        {/if}
+    <div slot="after">
+        AFTER
     </div>
-    <span slot="primary" class="hover:underline" let:collapsed let:label>{label}</span>
-    <span slot="secondary" let:collapsed let:compact let:label>{label}</span>
-    <!-- <span slot="tertiary" let:collapsed let:compact let:label>{label}</span> -->
+
+    <span slot="primary" let:label>{label}</span>
+    <span slot="secondary" let:label>{label}</span>
+    <span slot="tertiary" let:label>{label}</span>
 </Navbar>
  
+<style global lang="postcss">
+    .navbar {
+        .desktop {
+            display: none;
+        }
+        .mobile {
+            display: flex;
+        }
+    }
+
+    @screen md {
+        .navbar {
+            .desktop {
+                display: flex;
+            }
+            .mobile {
+                display: none;
+            }
+        }
+    }
+</style>
