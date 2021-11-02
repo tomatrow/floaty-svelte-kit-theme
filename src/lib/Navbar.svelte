@@ -7,18 +7,11 @@
     let clazz = ""
     export { clazz as class }
     export let menu: Menu = []    
+    export let open = false
 </script>
 
 <header class="navbar flex items-center gap-4 fixed top-0 left-0 right-0 {clazz}" {...$$restProps}>
-    <slot name="before" />
-    
-    <Mobile {menu}>
-        <!-- <svelte:fragment slot="primary" let:label>
-            <slot name="primary" {label} />
-        </svelte:fragment>
-        <slot name="secondary" slot="secondary" let:label {label} let:compact {compact} />
-        <slot name="tertiary" slot="tertiary" let:label {label} let:compact {compact} /> -->        
-    </Mobile>
+    <slot name="bar-left" />
 
     <Desktop {menu}>
         <!-- todo: figure out why the primary slot does not work in the compact form -->
@@ -30,5 +23,15 @@
         <slot name="tertiary" slot="tertiary" let:label {label} let:compact {compact} />
     </Desktop>
     
-    <slot name="after"  />
+    <slot {open} name="bar-right"  />
 </header>
+
+{#if open}
+    <Mobile {menu} bind:open>
+        <!-- <svelte:fragment slot="primary" let:label>
+            <slot name="primary" {label} />
+        </svelte:fragment>
+        <slot name="secondary" slot="secondary" let:label {label} let:compact {compact} />
+        <slot name="tertiary" slot="tertiary" let:label {label} let:compact {compact} /> -->        
+    </Mobile>
+{/if}

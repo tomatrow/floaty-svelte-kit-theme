@@ -139,15 +139,17 @@
 
 <script lang="ts">
     import { Navbar } from "$lib"
+    
+    let open: boolean
 </script>
 
-<Navbar {menu}  class="py-4" >
-    <a slot="before" href="#" class="mr-4 h-16 flex items-center justify-center bg-gray-100 px-4">
+<Navbar {menu} class="py-4" bind:open>
+    <a slot="bar-left" href="#" class="mr-4 h-16 flex items-center justify-center bg-gray-100 px-4">
         <span class="font-black tracking-wider underline">APRL.</span>
     </a>
-    <div slot="after">
-        AFTER
-    </div>
+    <button slot="bar-right" class="ml-auto hide-desktop" on:click={() => (open = !open)}>
+        HAM
+    </button>
 
     <span slot="primary" let:label>{label}</span>
     <span slot="secondary" let:label>{label}</span>
@@ -155,22 +157,17 @@
 </Navbar>
  
 <style global lang="postcss">
-    .navbar {
-        .desktop {
-            display: none;
-        }
-        .mobile {
-            display: flex;
-        }
+    .navbar .hide-mobile {
+        display: none;
     }
 
     @screen md {
         .navbar {
-            .desktop {
-                display: flex;
-            }
-            .mobile {
+            .hide-desktop {
                 display: none;
+            }
+            .hide-mobile {
+                display: flex;
             }
         }
     }

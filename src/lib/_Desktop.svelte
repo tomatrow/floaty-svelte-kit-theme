@@ -4,15 +4,23 @@
     import { fly } from "svelte/transition"
     import Mega from "$lib/_Mega.svelte"
     import { flyLift } from "$lib/_common"
+    import { preloadImage } from "$lib/_utility"
 
     export let menu: Menu
 
     function isMega(items?: ImageItem[]) {
         return items?.every(item => item.src)
     }
+    
+    let preload = false
+    $: if (preload) {
+        menu.flatMap(item => item.items?.map(item => item.src) ?? [])
+            .filter(Boolean)
+            .map(preloadImage)
+    }
 </script>
 
-<nav class="desktop flex gap-4 flex-wrap">
+<nav class="hide-mobile flex gap-4 flex-wrap" on:mouseover={() => (preload = true)}>
     {#each (menu ?? []) as { label, href, items }}
         <Hover let:hovering class="relative overflow-visible flex justify-center items-center">
             <a {href} class="px-4 py-2">
