@@ -3,77 +3,77 @@
 
     const menu: Menu = [
         {
-            label: "Shop",
+            label: "Sore",
             href: "#",
             items: [
                 {
-                    label: "Aparrel",
+                    label: "Farrel",
                     href: "#",
                     src: "https://source.unsplash.com/featured/?spring",
                     items: [
                         {
-                            label: "Sweatshirts",
+                            label: "Fearn",
                             href: "#"
                         },
                         {
-                            label: "T-Shirts",
+                            label: "Narn",
                             href: "#"
                         },
                         {
-                            label: "Shirts",
+                            label: "Far",
                             href: "#"
                         },
                         {
-                            label: "Jeans",
+                            label: "Side",
                             href: "#"
                         },
                         {
-                            label: "hats",
+                            label: "Pan",
                             href: "#"
                         }
                     ]
                 },
                 {
-                    label: "Outerwear",
+                    label: "Inside",
                     href: "#",
                     src: "https://source.unsplash.com/featured/?summer",
                     items: [
                         {
-                            label: "Jackets",
+                            label: "!st",
                             href: "#"
                         },
                         {
-                            label: "Vests",
+                            label: "Dolls",
                             href: "#"
                         },
                         {
-                            label: "Rain Wear",
+                            label: "Books",
                             href: "#"
                         }
                     ]
                 },
                 {
-                    label: "Accessories",
+                    label: "Burnside",
                     href: "#",
                     src: "https://source.unsplash.com/featured/?fall",
                     items: [
                         {
-                            label: "Socks",
+                            label: "Cares",
                             href: "#"
                         },
                         {
-                            label: "Hats",
+                            label: "Cans",
                             href: "#"
                         }
                     ]
                 },
                 {
-                    label: "Homegoods",
+                    label: "Barna",
                     href: "#",
                     src: "https://source.unsplash.com/featured/?winter",
                     items: [
                         {
-                            label: "Grooming",
+                            label: "Cantrip",
                             href: "#"
                         }
                     ]
@@ -81,35 +81,35 @@
             ]
         },
         {
-            label: "New Arrivals",
+            label: "Quallo",
             href: "#"
         },
         {
-            label: "Best Sellers",
+            label: "Solar",
             href: "#"
         },
         {
-            label: "Shop by Brand",
+            label: "Blueberry",
             href: "#",
             items: [
                 {
-                    label: "Muttonhead",
+                    label: "Shard",
                     href: "#"
                 },
                 {
-                    label: "Nakend and Famous",
+                    label: "Storm",
                     href: "#"
                 },
                 {
-                    label: "Juniper Ridge",
+                    label: "Chachel",
                     href: "#"
                 },
                 {
-                    label: "Bather",
+                    label: "Cats",
                     href: "#"
                 },
                 {
-                    label: "Beside",
+                    label: "Bears",
                     href: "#",
                     items: [
                         {
@@ -129,34 +129,60 @@
             ]
         },
         {
-            label: "Theme Features",
+            label: "Tambor",
             href: "#"
         }
     ]
-    
-    // menu[0].items = [...menu[0].items, ...menu[0].items, ...menu[0].items, ...menu[0].items]
 </script>
 
 <script lang="ts">
-    import { Navbar } from "$lib"
-    
+    import { Desktop, Mobile } from "$lib"
+    import { Menu, Cross } from "$lib/svgs"
+
     let open: boolean
 </script>
 
-<Navbar {menu} class="py-4" bind:open>
-    <a slot="bar-left" href="#" class="mr-4 h-16 flex items-center justify-center bg-gray-100 px-4">
-        <span class="font-black tracking-wider underline">APRL.</span>
-    </a>
-    <button slot="bar-right" class="ml-auto hide-desktop" on:click={() => (open = !open)}>
-        HAM
-    </button>
+<header class="flex items-center gap-4 fixed top-0 left-0 right-0 p-4">
+    <div class="mr-auto">LOGO</div>
 
-    <span class="hover:underline" slot="primary" let:label>{label}</span>
-    <span class="hover:underline" slot="secondary" let:label>{label}</span>
-    <span class="hover:underline" slot="tertiary" let:label>{label}</span>
-    <span class="hover:underline" slot="mobile-item" let:label let:level>{level}{label}</span>
-</Navbar>
- 
+    <Desktop class="mx-auto hide-mobile gap-4" {menu}>
+        <svelte:fragment slot="primary" let:href let:label>
+            <a class="p-4" {href}>{label}!<a /> </a></svelte:fragment
+        >
+        <svelte:fragment slot="secondary" let:href let:label let:compact>
+            <a
+                class="py-4 {compact
+                    ? 'px-4 duration-200 hover:bg-gray-100 whitespace-nowrap'
+                    : 'font-black'}"
+                {href}
+                >{label}!<a />
+            </a></svelte:fragment
+        >
+        <svelte:fragment slot="tertiary" let:href let:label let:compact>
+            <a class={compact ? "hover:bg-gray-100 duration-200 p-4 whitespace-nowrap" : ""} {href}
+                >{label}!<a />
+            </a></svelte:fragment
+        >
+    </Desktop>
+
+    <button class="hide-desktop" type="button" on:click={() => (open = !open)}>
+        <Menu class="w-8 h-8" />
+    </button>
+</header>
+
+{#if open}
+    <Mobile {menu} bind:open class="hide-desktop bg-white bg-opacity-80">
+        <svelte:fragment slot="link" let:level let:label let:href>
+            <a class="hover:underline" {href}>{level}-{label}!</a>
+        </svelte:fragment>
+        <svelte:fragment slot="close" let:close>
+            <button type="button" class="self-end pb-4" on:pointerdown={close}>
+                <Cross class="h-8 w-8" />
+            </button>
+        </svelte:fragment>
+    </Mobile>
+{/if}
+
 <style global lang="postcss">
     .hide-mobile {
         display: none;

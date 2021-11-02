@@ -1,35 +1,35 @@
 {
-	"name": "clean-floaty-svelte-mega-na",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"preview": "svelte-kit preview",
-		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-		"package": "svelte-kit package",
-		"lint": "prettier --check .",
-		"format": "prettier --write .",
-		"publish": "pnpm run lint && pnpm run package && pnpm publish ./package"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-static": "^1.0.0-next.21",
-		"@sveltejs/kit": "next",
-		"@tailwindcss/aspect-ratio": "^0.3.0",
-		"autoprefixer": "^10.4.0",
-		"cssnano": "^5.0.8",
-		"postcss": "^8.3.11",
-		"postcss-load-config": "^3.1.0",
-		"postcss-nested": "^5.0.6",
-		"prettier": "^2.4.1",
-		"prettier-plugin-svelte": "^2.4.0",
-		"svelte": "^3.44.1",
-		"svelte-check": "^2.2.8",
-		"svelte-language-server": "^0.14.11",
-		"svelte-preprocess": "^4.9.8",
-		"tailwindcss": "^2.2.19",
-		"tslib": "^2.3.1",
-		"typescript": "^4.4.4"
-	},
-	"type": "module"
+    "name": "clean-floaty-svelte-mega-na",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "svelte-kit dev",
+        "build": "svelte-kit build",
+        "preview": "svelte-kit preview",
+        "check": "svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+        "package": "svelte-kit package",
+        "lint": "prettier --check .",
+        "format": "prettier --write .",
+        "publish": "pnpm run lint && pnpm run package && pnpm publish ./package"
+    },
+    "devDependencies": {
+        "@sveltejs/adapter-static": "^1.0.0-next.21",
+        "@sveltejs/kit": "next",
+        "@tailwindcss/aspect-ratio": "^0.3.0",
+        "autoprefixer": "^10.4.0",
+        "cssnano": "^5.0.8",
+        "postcss": "^8.3.11",
+        "postcss-load-config": "^3.1.0",
+        "postcss-nested": "^5.0.6",
+        "prettier": "^2.4.1",
+        "prettier-plugin-svelte": "^2.4.0",
+        "svelte": "^3.44.1",
+        "svelte-check": "^2.2.8",
+        "svelte-language-server": "^0.14.11",
+        "svelte-preprocess": "^4.9.8",
+        "tailwindcss": "^2.2.19",
+        "tslib": "^2.3.1",
+        "typescript": "^4.4.4"
+    },
+    "type": "module"
 }
