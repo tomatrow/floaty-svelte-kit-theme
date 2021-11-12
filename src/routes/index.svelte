@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
-    import type { Menu } from "$lib"
+    import type * as Types from "$lib"
 
-    const menu: Menu = [
+    const menu: Types.Menu = [
         {
             label: "Sore",
             href: "#",
@@ -147,8 +147,8 @@
 
     <Desktop class="mx-auto hide-mobile gap-4" {menu}>
         <svelte:fragment slot="primary" let:href let:label>
-            <a class="p-4" {href}>{label}!</a></svelte:fragment
-        >
+            <a class="p-4" {href}>{label}!</a>
+        </svelte:fragment>
         <svelte:fragment slot="secondary" let:href let:label let:compact>
             <a
                 class="py-4 {compact
@@ -156,13 +156,13 @@
                     : 'font-black'}"
                 {href}
                 >{label}!
-            </a></svelte:fragment
-        >
+            </a>
+        </svelte:fragment>
         <svelte:fragment slot="tertiary" let:href let:label let:compact>
             <a class={compact ? "hover:bg-gray-100 duration-200 p-4 whitespace-nowrap" : ""} {href}
                 >{label}!
-            </a></svelte:fragment
-        >
+            </a>
+        </svelte:fragment>
     </Desktop>
 
     <button class="hide-desktop" type="button" on:click={() => (open = !open)}>

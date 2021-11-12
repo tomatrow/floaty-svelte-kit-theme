@@ -1,10 +1,23 @@
 <script lang="ts">
-    import type { Menu, ImageItem } from "$lib/_index.type"
+    import type {
+        Menu,
+        ImageItem,
+        LinkSlot,
+        DynamicLinkSlot,
+        ImageLinkSlot
+    } from "$lib/_index.type"
     import Hover from "$lib/_Hover.svelte"
     import { fly } from "svelte/transition"
     import Mega from "$lib/_Mega.svelte"
     import { flyLift } from "$lib/_common"
     import { preloadImage } from "$lib/_utility"
+
+    interface $$Slots {
+        primary: LinkSlot
+        secondary: DynamicLinkSlot
+        tertiary: DynamicLinkSlot
+        image: ImageLinkSlot
+    }
 
     export let menu: Menu
     let clazz = ""
@@ -58,7 +71,7 @@
                     >
                         {#each items ?? [] as { label, href, items }}
                             <Hover let:hovering class="flex flex-col relative z-10">
-                                <slot name="secondary" {label} {href} compact>
+                                <slot name="secondary" {label} {href} compact={true}>
                                     <a {href}>{label}</a>
                                 </slot>
                                 {#if hovering}
@@ -67,7 +80,7 @@
                                         class="absolute top-0 left-[100%] flex flex-col shadow-xl bg-white"
                                     >
                                         {#each items ?? [] as { label, href }}
-                                            <slot name="tertiary" compact {label} {href}>
+                                            <slot name="tertiary" {label} {href} compact={true}>
                                                 <a {href}>{label}</a>
                                             </slot>
                                         {/each}

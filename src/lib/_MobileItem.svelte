@@ -1,9 +1,13 @@
 <script lang="ts">
-    import type { MenuItem } from "./index.type"
-    import { slide, fly, blur } from "svelte/transition"
-    import { ChevronUp, ChevronDown } from "$lib/svgs"
+    import type { Item, MobileLinkSlot } from "./_index.type"
+    import { slide } from "svelte/transition"
+    import { ChevronDown } from "$lib/svgs"
 
-    export let item: MenuItem
+    interface $$Slots {
+        default: MobileLinkSlot
+    }
+
+    export let item: Item
     export let level: number
 
     let open = false
@@ -25,9 +29,9 @@
 
     {#if open}
         <div transition:slide class="flex flex-col gap-1 border-l border-black pl-4">
-            {#each item.items as item, index}
-                <svelte:self level={level + 1} {item} let:level let:label>
-                    <slot {label} {level} />
+            {#each item.items as item}
+                <svelte:self level={level + 1} {item} let:level let:label let:item>
+                    <slot {level} {label} href={item?.href} />
                 </svelte:self>
             {/each}
         </div>

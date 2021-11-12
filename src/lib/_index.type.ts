@@ -15,3 +15,17 @@ export interface ImageItem extends Item {
 }
 
 export type Menu = Item<ImageItem>[]
+
+export interface LinkSlot extends Omit<DefaultItem, "items"> {}
+
+export interface DynamicLinkSlot extends LinkSlot {
+    compact: boolean
+}
+
+export interface ImageLinkSlot extends LinkSlot {
+    src: string
+}
+
+export interface MobileLinkSlot extends LinkSlot {
+    level: number
+}
