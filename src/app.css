@@ -3,3 +3,7 @@
 /* Write your global styles here, in PostCSS syntax */
 @tailwind components;
 @tailwind utilities;
+
+html {
+    min-height: 100vh;
+}

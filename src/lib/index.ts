@@ -1,3 +1,6 @@
-export { default as Mobile } from "$lib/Mobile.svelte"
-export { default as Desktop } from "$lib/Desktop.svelte"
+export { default as PrimaryCompact } from "$lib/PrimaryCompact.svelte"
+export { default as Primary } from "$lib/Primary.svelte"
+export { default as Secondary } from "$lib/Secondary.svelte"
+export { default as Main } from "$lib/Main.svelte"
+export { default as Navbar } from "$lib/Navbar.svelte"
 export * from "$lib/_index.type"

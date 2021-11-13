@@ -14,9 +14,14 @@ export interface ImageItem extends Item {
     src?: string
 }
 
-export type Menu = Item<ImageItem>[]
+export type LeafItem = Item<never>
 
-export interface LinkSlot extends Omit<DefaultItem, "items"> {}
+export type PrimaryMenu = Item<ImageItem>[]
+export type SecondaryMenu = Item<LeafItem>[]
+
+export interface LinkSlot extends Omit<DefaultItem, "items"> {
+    level: number
+}
 
 export interface DynamicLinkSlot extends LinkSlot {
     compact: boolean
@@ -24,8 +29,4 @@ export interface DynamicLinkSlot extends LinkSlot {
 
 export interface ImageLinkSlot extends LinkSlot {
     src: string
-}
-
-export interface MobileLinkSlot extends LinkSlot {
-    level: number
 }
