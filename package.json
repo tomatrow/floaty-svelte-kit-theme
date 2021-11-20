@@ -1,5 +1,5 @@
 {
-    "name": "clean-floaty-svelte-mega-na",
+    "name": "@tomatrow/floaty-sveltekit-theme",
     "version": "0.0.1",
     "scripts": {
         "dev": "svelte-kit dev",
@@ -8,12 +8,11 @@
         "check": "svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
         "package": "svelte-kit package",
-        "lint": "prettier --check .",
-        "format": "prettier --write .",
+        "lint": "prettier --check --ignore-unknown  '**/*'",
+        "format": "prettier --write --ignore-unknown  '**/*'",
         "publish": "pnpm run lint && pnpm run package && pnpm publish ./package"
     },
     "devDependencies": {
-        "@sveltejs/adapter-static": "^1.0.0-next.21",
         "@sveltejs/kit": "next",
         "@tailwindcss/aspect-ratio": "^0.3.0",
         "autoprefixer": "^10.4.0",
