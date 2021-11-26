@@ -24,7 +24,10 @@
                 class="flex-shrink-0"
                 on:click={() => (open = !open)}
             >
-                <ChevronDown class="h-6 w-6 duration-200 {open ? 'scale-y-[-1]' : ''}" />
+                <ChevronDown
+                    style={open ? "transfrom: scaleY(-1)" : ""}
+                    class="h-6 w-6 duration-200"
+                />
             </button>
         {/if}
     </div>

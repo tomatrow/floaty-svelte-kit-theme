@@ -70,7 +70,7 @@
                     {:else}
                         <div
                             transition:fly={flyLift}
-                            class="absolute top-[100%] left-0 w-auto shadow-lg flex flex-col"
+                            class="absolute top-full left-0 w-auto shadow-lg flex flex-col"
                         >
                             {#each items ?? [] as { label, href, items }}
                                 <Hover let:hovering class="flex flex-col relative z-10">
@@ -80,7 +80,7 @@
                                     {#if hovering && enabled}
                                         <div
                                             transition:fly={{ x: 25, duration: 250 }}
-                                            class="absolute top-0 left-[100%] flex flex-col shadow-xl bg-white"
+                                            class="absolute top-0 left-full flex flex-col shadow-xl bg-white"
                                         >
                                             {#each items ?? [] as { label, href }}
                                                 <slot
