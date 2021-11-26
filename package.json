@@ -46,6 +46,7 @@
     "homepage": "https://github.com/tomatrow/floaty-svelte-kit-theme#readme",
     "exports": {
         "./package.json": "./package.json",
-        ".": "./index.js"
+        ".": "./index.js",
+        "./styles.css": "./styles.css"
     }
 }
