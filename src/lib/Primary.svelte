@@ -80,7 +80,7 @@
                                     {#if hovering && enabled}
                                         <div
                                             transition:fly={{ x: 25, duration: 250 }}
-                                            class="absolute top-0 left-full flex flex-col shadow-xl bg-white"
+                                            class="absolute top-0 left-full flex flex-col shadow-xl"
                                         >
                                             {#each items ?? [] as { label, href }}
                                                 <slot
