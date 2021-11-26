@@ -4,7 +4,8 @@
 </script>
 
 <main
-    class="flex flex-col min-h-[calc(100vh-var(--floaty-nav-h))] mt-[var(--floaty-nav-h)] {clazz}"
+    class="min-h-[calc(100vh-var(--floaty-nav-h))] mt-[var(--floaty-nav-h)] {clazz}"
+    {...$$restProps}
 >
     <slot />
 </main>
