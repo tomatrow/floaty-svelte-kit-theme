@@ -1,10 +1,10 @@
 <script lang="ts">
     import type { PrimaryMenu, ImageItem, DynamicLinkSlot, ImageLinkSlot } from "$lib/_index.type"
-    import Hover from "$lib/_Hover.svelte"
+    import { Hover } from "optional-default-site-kit/components"
     import { fly } from "svelte/transition"
     import Mega from "$lib/_Mega.svelte"
     import { flyLift } from "$lib/_common"
-    import { preloadImage } from "$lib/_utility"
+    import { preloadImage } from "optional-default-site-kit/functions/preloadImage"
     import { onMount } from "svelte"
 
     interface $$Slots {

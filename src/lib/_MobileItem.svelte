@@ -1,10 +1,10 @@
 <script lang="ts">
-    import type { Item, MobileLinkSlot } from "./_index.type"
+    import type { Item, LinkSlot } from "./_index.type"
     import { slide } from "svelte/transition"
     import { ChevronDown } from "$lib/svgs"
 
     interface $$Slots {
-        default: MobileLinkSlot
+        default: LinkSlot
     }
 
     export let item: Item

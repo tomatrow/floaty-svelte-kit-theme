@@ -1,10 +1,9 @@
 <script lang="ts">
     import type { SecondaryMenu, DynamicLinkSlot } from "./_index.type"
     import SecondaryItem from "./_SecondaryItem.svelte"
-    import { browser } from "$app/env"
 
     interface $$Slots {
-        default: DynamicLinkSlot
+        link: DynamicLinkSlot
     }
 
     let clazz = ""

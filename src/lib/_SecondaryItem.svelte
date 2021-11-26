@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Item, LinkSlot, SecondaryMenu } from "./_index.type"
+    import type { LinkSlot, SecondaryMenu } from "./_index.type"
     import { slide, fly } from "svelte/transition"
     import { ChevronDown } from "$lib/svgs"
 

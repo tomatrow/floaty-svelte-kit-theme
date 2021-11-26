@@ -5,8 +5,8 @@
 <script lang="ts">
     import "../app.css"
     import { Main, Primary, PrimaryCompact, Secondary, Navbar } from "$lib"
-    import { Menu, Cross } from "$lib/svgs"
-    import { merge } from "$lib/_common"
+    import { Menu } from "$lib/svgs"
+    import { build } from "optional-default-site-kit"
 
     let open: boolean
 </script>
@@ -18,7 +18,7 @@
         <svelte:fragment slot="link" let:href let:label let:level let:compact>
             <a
                 {href}
-                class={merge(
+                class={build(
                     "bg-green-500",
                     level === 0 && "p-4",
                     level === 1 &&
@@ -46,7 +46,7 @@
             <svelte:fragment slot="link" let:href let:label let:level let:compact>
                 <a
                     {href}
-                    class={merge(
+                    class={build(
                         compact && (level === 0 ? "py-2" : "block p-1"),
                         !compact && (level === 0 ? "font-bold p-2" : "px-2 py-1")
                     )}>{level}-{label}!</a
