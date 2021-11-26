@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { SecondaryMenu, DynamicLinkSlot } from "./_index.type"
     import SecondaryItem from "./_SecondaryItem.svelte"
+    import Wrapper from "$lib/_Wrapper.svelte"
 
     interface $$Slots {
         link: DynamicLinkSlot

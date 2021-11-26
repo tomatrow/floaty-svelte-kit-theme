@@ -3,6 +3,7 @@
     import { fly } from "svelte/transition"
     import MobileItem from "./_MobileItem.svelte"
     import { browser } from "$app/env"
+    import Wrapper from "$lib/_Wrapper.svelte"
 
     interface $$Slots {
         link: LinkSlot
@@ -32,41 +33,43 @@
 
 <svelte:window on:sveltekit:navigation-start={close} />
 
-<section
-    transition:fly={{ x: 100, duration }}
-    class="hide-if-desktop fixed inset-0 overflow-scroll {rootClass}"
-    on:pointerdown={handlePointerDown}
->
-    <nav class="overflow-y-scroll flex flex-col max-w-sm ml-auto w-full {clazz}">
-        <button
-            style="color: var(--floaty-control-color)"
-            type="button"
-            class="self-end pb-4"
-            on:pointerdown={close}
-        >
-            ╳
-        </button>
+<Wrapper>
+    <section
+        transition:fly={{ x: 100, duration }}
+        class="hide-if-desktop fixed inset-0 overflow-scroll {rootClass}"
+        on:pointerdown={handlePointerDown}
+    >
+        <nav class="overflow-y-scroll flex flex-col max-w-sm ml-auto w-full {clazz}">
+            <button
+                style="color: var(--floaty-control-color)"
+                type="button"
+                class="self-end pb-4"
+                on:pointerdown={close}
+            >
+                ╳
+            </button>
 
-        <slot name="before" />
+            <slot name="before" />
 
-        <div class="divide-y">
-            {#each menu as item, index}
-                <div
-                    style="border-color: var(--floaty-line-color)"
-                    in:fly={{ y: -50, delay: duration + index * 25 }}
-                >
-                    <MobileItem {item} let:href let:label let:level level={0}>
-                        <slot name="link" {level} {label} {href}>
-                            <a {href}>{label}</a>
-                        </slot>
-                    </MobileItem>
-                </div>
-            {/each}
-        </div>
+            <div class="divide-y">
+                {#each menu as item, index}
+                    <div
+                        style="border-color: var(--floaty-line-color)"
+                        in:fly={{ y: -50, delay: duration + index * 25 }}
+                    >
+                        <MobileItem {item} let:href let:label let:level level={0}>
+                            <slot name="link" {level} {label} {href}>
+                                <a {href}>{label}</a>
+                            </slot>
+                        </MobileItem>
+                    </div>
+                {/each}
+            </div>
 
-        <slot name="after" />
-    </nav>
-</section>
+            <slot name="after" />
+        </nav>
+    </section>
+</Wrapper>
 
 <style global lang="postcss">
     body.lock-scroll {

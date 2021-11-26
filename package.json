@@ -7,10 +7,11 @@
         "preview": "svelte-kit preview",
         "check": "svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-        "package": "svelte-kit package",
+        "styles": "NODE_ENV=production;tailwindcss --postcss postcss.config.cjs -c tailwind.config.cjs -i src/app.postcss -o package/styles.css",
+        "package": "svelte-kit package && pnpm run styles",
         "lint": "prettier --check --ignore-unknown  '**/*'",
         "format": "prettier --write --ignore-unknown  '**/*'",
-        "publish": "pnpm run lint && pnpm run package && pnpm publish ./package"
+        "publish": "pnpm run lint && pnpm run package && && pnpm publish ./package"
     },
     "devDependencies": {
         "@sveltejs/kit": "next",
@@ -42,5 +43,9 @@
     "bugs": {
         "url": "https://github.com/tomatrow/floaty-svelte-kit-theme/issues"
     },
-    "homepage": "https://github.com/tomatrow/floaty-svelte-kit-theme#readme"
+    "homepage": "https://github.com/tomatrow/floaty-svelte-kit-theme#readme",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": "./index.js"
+    }
 }

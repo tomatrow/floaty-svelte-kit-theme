@@ -1,9 +1,9 @@
 <script lang="ts" context="module">
+    import "../app.postcss"
     import menu from "./_menu.json"
 </script>
 
 <script lang="ts">
-    import "../app.css"
     import { Main, Primary, PrimaryCompact, Secondary, Navbar } from "$lib"
     import { Menu } from "$lib/svgs"
     import { build } from "optional-default-site-kit"
