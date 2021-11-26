@@ -1,6 +1,6 @@
 {
     "name": "@tomatrow/floaty-svelte-kit-theme",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "scripts": {
         "dev": "svelte-kit dev",
         "build": "svelte-kit build",
@@ -11,7 +11,7 @@
         "package": "svelte-kit package && pnpm run styles",
         "lint": "prettier --check --ignore-unknown  '**/*'",
         "format": "prettier --write --ignore-unknown  '**/*'",
-        "publish": "pnpm run lint && pnpm run package && && pnpm publish ./package"
+        "publish": "pnpm run lint && pnpm run package && pnpm publish ./package"
     },
     "devDependencies": {
         "@sveltejs/kit": "next",
