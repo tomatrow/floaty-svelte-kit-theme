@@ -22,7 +22,7 @@
                 class="ml-auto flex-shrink-1"
                 on:click={() => (open = !open)}
             >
-                <ChevronDown class="w-8 duration-[225ms] {open ? 'scale-y-[-1]' : ''}" />
+                <ChevronDown class="w-8 duration-200 {open ? 'scale-y-[-1]' : ''}" />
             </button>
         {/if}
     </div>

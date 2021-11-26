@@ -21,8 +21,15 @@
 <div
     transition:fly={flyLift}
     bind:this={element}
-    class="grid grid-cols-4 absolute w-[100vw] top-[100%] {clazz}"
+    class="grid grid-cols-4 absolute {clazz}"
     style="left: -{x}px"
 >
     <slot />
 </div>
+
+<style>
+    div {
+        width: 100vw;
+        top: 100%;
+    }
+</style>
