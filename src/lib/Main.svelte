@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Wrapper from "$lib/_Wrapper.svelte"
+    import Wrapper from "./_Wrapper.svelte"
 
     let clazz: string = undefined
     export { clazz as class }

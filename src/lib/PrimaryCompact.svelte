@@ -3,7 +3,7 @@
     import { fly } from "svelte/transition"
     import MobileItem from "./_MobileItem.svelte"
     import { browser } from "$app/env"
-    import Wrapper from "$lib/_Wrapper.svelte"
+    import Wrapper from "./_Wrapper.svelte"
 
     interface $$Slots {
         link: LinkSlot
