@@ -1,5 +1,5 @@
 {
-    "name": "@tomatrow/floaty-svelte-kit-theme",
+    "name": "optional-default-floaty-sveltekit-theme",
     "version": "0.0.9",
     "scripts": {
         "dev": "svelte-kit dev",
