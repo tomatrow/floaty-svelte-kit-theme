@@ -6,7 +6,7 @@
 <script lang="ts">
     import { Main, Primary, PrimaryCompact, Secondary, Navbar } from "$lib"
     import { Menu } from "$lib/svgs"
-    import { build } from "optional-default-site-kit"
+    import { build } from "optional-default-site-kit/functions"
 
     let open: boolean
 </script>
