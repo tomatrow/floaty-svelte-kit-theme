@@ -96,23 +96,23 @@
         "items": [
             {
                 "label": "Shard",
-                "href": "#"
+                "href": "shard"
             },
             {
                 "label": "Storm",
-                "href": "#"
+                "href": "storm"
             },
             {
                 "label": "Chachel",
-                "href": "#"
+                "href": "chachel"
             },
             {
                 "label": "Cats",
-                "href": "#"
+                "href": "cats"
             },
             {
-                "label": "Bears",
-                "href": "#",
+                "label": "Seasons",
+                "href": "/seasons",
                 "items": [
                     {
                         "label": "Summer",
@@ -125,7 +125,11 @@
                     {
                         "label": "Fall",
                         "href": "/seasons/fall"
-                    }
+                    },
+					{
+						"label": "Spring",
+						"href": "/seasons/spring"
+					}
                 ]
             }
         ]

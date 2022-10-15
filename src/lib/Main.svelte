@@ -1,15 +1,11 @@
 <script lang="ts">
-    import Wrapper from "./_Wrapper.svelte"
-
     let clazz: string = undefined
     export { clazz as class }
 </script>
 
-<Wrapper>
-    <main class={clazz} {...$$restProps}>
-        <slot />
-    </main>
-</Wrapper>
+<main class={clazz} {...$$restProps}>
+    <slot />
+</main>
 
 <style>
     main {

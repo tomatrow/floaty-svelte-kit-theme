@@ -10,8 +10,7 @@ const config = {
         })
     ],
 
-    kit: {
-    }
+    kit: {}
 }
 
 export default config
