@@ -29,7 +29,7 @@
 	beforeNavigate(({ from, to }) => {
 		$open = false
 
-		if (from.url.hash !== to.url.hash) hashChanged = true
+		if (from.url.hash !== to?.url.hash) hashChanged = true
 	})
 
 	function handleScroll() {
