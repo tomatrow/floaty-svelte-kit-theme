@@ -3,6 +3,7 @@
 	import { fly } from "svelte/transition"
 	import MobileItem from "./_MobileItem.svelte"
 	import { browser } from "$app/environment"
+	import { beforeNavigate } from "$app/navigation"
 
 	interface $$Slots {
 		link: LinkSlot
@@ -28,9 +29,9 @@
 	const duration = 200
 
 	$: browser && document.body.classList[open ? "add" : "remove"]("lock-scroll")
-</script>
 
-<svelte:window on:sveltekit:navigation-start={close} />
+	beforeNavigate(close)
+</script>
 
 <section
 	transition:fly={{ x: 100, duration }}
