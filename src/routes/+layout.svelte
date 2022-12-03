@@ -1,17 +1,21 @@
 <script lang="ts" context="module">
 	import "../app.postcss"
 	import menu from "./_menu.json"
+	import type { SecondaryMenu } from "$lib/_index.type"
+
+	const secondaryMenu = menu as SecondaryMenu
 </script>
 
 <script lang="ts">
 	import { Main, Primary, PrimaryCompact, Secondary, Navbar } from "$lib"
 	import { Menu } from "$lib/svgs"
 	import { build } from "optional-default-site-kit/functions"
+	import { page } from "$app/stores"
 
 	let open: boolean
 </script>
 
-<Navbar class="bg-red-500 gap-4 p-4">
+<Navbar {page} class="bg-red-500 gap-4 p-4">
 	<a href="/" class="p-4">LOGO</a>
 
 	<Primary class="mx-auto gap-4" {menu} megaClass="bg-blue-500 gap-4 p-4">
@@ -42,7 +46,7 @@
 		class="bg-red-600 text-white mt-auto flex flex-col gap-4 sm:gap-8 p-4 sm:flex-row items-center"
 	>
 		<a href="/" class="p-8">LOGO</a>
-		<Secondary {menu} class="self-stretch sm:mx-auto sm:max-w-lg sm:w-full">
+		<Secondary menu={secondaryMenu} class="self-stretch sm:mx-auto sm:max-w-lg sm:w-full">
 			<svelte:fragment slot="link" let:href let:label let:level let:compact>
 				<a
 					{href}
@@ -61,10 +65,11 @@
 
 {#if open}
 	<PrimaryCompact
+		{page}
 		{menu}
 		bind:open
 		class="text-red-700 bg-green-300 p-4"
-		rootClass="bg-white bg-opacity-80 z-10"
+		rootClass="bg-white bg-opacity-80 z-50"
 	>
 		<svelte:fragment slot="link" let:level let:label let:href>
 			<a {href} class="hover:underline">{level}-{label}!</a>
