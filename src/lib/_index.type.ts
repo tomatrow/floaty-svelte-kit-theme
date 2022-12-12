@@ -18,8 +18,8 @@ export type LeafItem = Item<never>
 
 export type PrimaryMenu = Item<ImageItem>[]
 export type SecondaryMenu = Item<LeafItem>[]
-type f = Partial<{ hello: string }>
-export interface LinkSlot extends Omit<DefaultItem, "items"> {
+
+export interface LinkSlot extends DefaultItem {
 	level: number
 }
 

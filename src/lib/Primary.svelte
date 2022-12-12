@@ -40,7 +40,7 @@
 				let:hovering
 				class="relative overflow-visible flex justify-center items-center"
 			>
-				<slot name="link" {label} {href} compact={false} level={0}>
+				<slot name="link" {label} {href} compact={false} level={0} {items}>
 					<a {href}>{label}</a>
 				</slot>
 				{#if hovering && enabled}
